@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">  
+    <meta charset="UTF-8">
+    <title>New Request — CivicDesk</title>
+
+
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"> 
+</head>
+<body>
+    <h1>New service request</h1>
+    <p>Use fictional details for this demo.</p>
+
+    <form method="post" action="/new-request">
+        <p>
+            <label for="title">Request title</label><br>
+            <input id="title" name="title" type="text" required>
+        </p>
+
+        <p>
+            <label for="category">Category</label><br>
+            <select id="category" name="category" required>
+                <option value="">Choose a category</option>
+                <option>Street lighting</option>
+                <option>Roads and pavements</option>
+                <option>Waste and cleanliness</option>
+                <option>Other</option>
+            </select>
+        </p>
+
+        <p>
+            <label for="location">Location</label><br>
+            <input id="location" name="location" type="text" required>
+        </p>
+
+        <p>
+            <label for="description">Description</label><br>
+            <textarea id="description" name="description"
+                      rows="5" required></textarea>
+        </p>
+
+        <button type="submit">Submit request</button>
+    </form>
+
+    <p><a href="/">Back to home</a></p>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Saved Requests — CivicDesk</title>
+
+        <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Saved requests</h1>
+    <p>Independent portfolio demo. All requests are fictional.</p>
+
+    <p><a href="/new-request">New request</a></p>
+
+    {% if records %}
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th scope="col">ID</th>
+                        <th scope="col">Title</th>
+                        <th scope="col">Category</th>
+                        <th scope="col">Location</th>
+                        <th scope="col">Description</th>
+                        <th scope="col">Status</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    {% for record in records %}
+                        <tr>
+                            <td>{{ record["id"] }}</td>
+                            <td>{{ record["title"] }}</td>
+                            <td>{{ record["category"] }}</td>
+                            <td>{{ record["location"] }}</td>
+                            <td>{{ record["description"] }}</td>
+                            <td>
+    <form method="post"
+          action="{{ url_for('update_status', request_id=record['id']) }}">
+
+        <select name="status"
+                aria-label="Status for request {{ record['id'] }}">
+            {% for status in ["Submitted", "In progress", "Resolved"] %}
+                <option value="{{ status }}"
+                    {% if record["status"] == status %}selected{% endif %}>
+                    {{ status }}
+                </option>
+            {% endfor %}
+        </select>
+
+        <button type="submit">Save</button>
+    </form>
+</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    {% else %}
+        <p>No requests yet. Click New request to add your first one.</p>
+    {% endif %}
+</body>
+</html>
