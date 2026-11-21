@@ -52,3 +52,14 @@ This is a local, single-user learning project.
 Accounts, notifications, and government integrations are outside
 the current version.
 
+## Screenshots
+
+### Request list
+
+![CivicDesk request list](screenshots/requests.png)
+
+### New request form
+
+![CivicDesk new request form](screenshots/new-request.png)
+
+
