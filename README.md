@@ -52,6 +52,12 @@ This is a local, single-user learning project.
 Accounts, notifications, and government integrations are outside
 the current version.
 
+## App Preview
+
+<img width="939" height="725" alt="Screenshot 2026-11-18 142705" src="https://github.com/user-attachments/assets/a3c91b38-0dda-47fc-8ce1-94f5a252f49a" />
+
+<img width="931" height="655" alt="Screenshot 2026-11-18 142734" src="https://github.com/user-attachments/assets/b78aba16-a12f-4b29-b6e5-14c94db16783" />
+
 
 
 
